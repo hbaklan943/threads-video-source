@@ -22,11 +22,12 @@ function App() {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        enter thread link
-      <input {...register("url")} />
-      <input type="submit" />
+        <h1>Enter thread link</h1>
+        <input type='text' {...register("url")} />
+        <input type="submit" />
+        
       </form>
-      {downloadLink ? <a href={downloadLink}>indir</a> : "gecerli bir link girin"} 
+      {downloadLink ? <button><a href={downloadLink}>Download</a></button> : "Enter a valid link"} 
     </>
   )
 }
