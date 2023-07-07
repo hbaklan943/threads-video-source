@@ -2,8 +2,9 @@
   "name": "threads",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "scraper.js",
   "scripts": {
+    "build:ui": "rm -rf dist && cd ../threads-client/ && npm run build && cp -r dist ../threads-server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon scraper.js"
   },

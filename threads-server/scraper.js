@@ -3,14 +3,13 @@ const app = express();
 const cors = require("cors");
 app.use(express.json());
 app.use(cors());
+app.use(express.static('dist'))
 const puppeteer = require('puppeteer')
 
 
 const getVideo = async url => {
   console.log(url);
-  const browser = await puppeteer.launch({
-    executablePath: '/usr/bin/chromium-browser'
-  })
+  const browser = await puppeteer.launch()
   const page = await browser.newPage();
 
   await page.goto(url)
@@ -44,7 +43,7 @@ app.post("/api/download", async (request, response) => {
   }
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
