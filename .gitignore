@@ -1,4 +1,5 @@
 node_modules/
-fly.toml
+*.toml
 Dockerfile
 .dockerignore
+.env
